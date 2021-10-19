@@ -7,11 +7,14 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "testcafe chrome ./pageObjectModel/tests "
+    "fullregression": "testcafe chrome ./pageObjectModel/tests --reporter html: ./TodoistAutomatedSolution/Reporter/file.html",
+    "testlogin2browsersheadlessmode": "testcafe chrome:headless,firefox:headless ./pageObjectModel/tests/LoginTest.js --reporter html: ./TodoistAutomatedSolution/Reporter/file.html",
+    "smoketest": "testcafe chrome ./pageObjectModel/tests --test-meta type=smoke  --reporter html: ./TodoistAutomatedSolution/Reporter/file.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "casual": "^1.6.2",
     "dotenv": "^10.0.0",
     "testcafe": "^1.16.1"
   }
