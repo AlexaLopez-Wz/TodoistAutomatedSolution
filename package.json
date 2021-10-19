@@ -7,9 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "fullregression": "testcafe chrome ./pageObjectModel/tests --reporter html: ./TodoistAutomatedSolution/Reporter/file.html",
-    "testlogin2browsersheadlessmode": "testcafe chrome:headless,firefox:headless ./pageObjectModel/tests/LoginTest.js --reporter html: ./TodoistAutomatedSolution/Reporter/file.html",
-    "smoketest": "testcafe chrome ./pageObjectModel/tests --test-meta type=smoke  --reporter html: ./TodoistAutomatedSolution/Reporter/file.html"
+    "fullregression": "testcafe chrome ./pageObjectModel/tests --reporter html: ./pageObjectModel/Reporter/file.html",
+    "testlogin2browsersheadlessmode": "testcafe chrome:headless,firefox:headless ./pageObjectModel/tests/LoginTest.js --reporter html: ./pageObjectModel/Reporter/file.html",
+    "smoketest": "testcafe chrome ./pageObjectModel/tests --test-meta type=smoke  --reporter html: ./pageObjectModel/Reporter/file.html"
   },
   "author": "",
   "license": "ISC",
