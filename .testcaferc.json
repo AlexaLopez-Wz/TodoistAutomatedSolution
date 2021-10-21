@@ -1,0 +1,8 @@
+{
+    "skipJsErrors": true,
+    "hostname": "localhost",
+    "assertionTimeout": 2000,
+    "speed": 0.8,
+    "browsers": "chrome",
+    "src": "/pageObjectModel/tests"    
+}

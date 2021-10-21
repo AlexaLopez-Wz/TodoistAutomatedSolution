@@ -8,7 +8,7 @@ fixture ("Login feature test - Valid scenarios")
 
 test.meta('type','smoke')("As an user, I should be able to log in successfully by providing valid credentials", async t => {
     await loginPage.submitLoginForm(CREDENTIALS.STANDARD_USER.EMAIL,CREDENTIALS.STANDARD_USER.PASSWORD)
-    await t.expect(todayPage.todayView.visible).ok({timeout:3500})
+    await t.expect(todayPage.todayView.visible).ok()
 })
 
 
