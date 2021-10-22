@@ -57,19 +57,28 @@ Programing language:
 	3.  Save the file
 
 ### Solution Structure:
-    pageObjectMode
-	├── data
-	│   ├── Constrains.js
-	│   └── Roles.js
-	├── pages
-	│   ├── InboxPage.js
-	│   ├── LoginPage.js
-	│   ├── SideBarPage.js
-	│   └── TodayPage.js
-	└── tests
-	    ├── LoginTest.js
-	    ├── ProjectCreationTest.js
-	    └── TaskCreationTest.js
+    TodoistAutomatedSolution
+    ├── README.md
+    ├── Reporter
+    │   ├── FullRegressionReports
+    │   │   └── file.html
+    │   └── SmokeReports
+    │       └── file.html
+    ├── package-lock.json
+    ├── package.json
+    └── pageObjectModel
+        ├── data
+        │   ├── Constrains.js
+        │   └── Roles.js
+        ├── pages
+        │   ├── InboxPage.js
+        │   ├── LoginPage.js
+        │   ├── SideBarPage.js
+        │   └── TodayPage.js
+        └── tests
+            ├── LoginTest.js
+            ├── ProjectCreationTest.js
+            └── TaskCreationTest.js
 	   
 Description:  
 - pageObjectModel:
@@ -111,8 +120,3 @@ Copy & paste the following code into the terminal
 	```
 	npm run smoketest
 	```
-
-
-        
-  
-
