@@ -10,6 +10,7 @@ fixture ('Create new Task feature test')
         //Log in before run every test in this suite
         await t.useRole(STANDARD_USER)
         await t.click(sideBarPage.inboxOption)
+        await t.wait(1500)
     })
     .afterEach(async t => {
         await t.wait(2000)
