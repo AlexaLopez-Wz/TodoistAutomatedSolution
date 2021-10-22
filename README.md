@@ -74,9 +74,9 @@ Programing language:
 Description:  
 - pageObjectModel:
 	* DATA : here you can find the common data used by tests and methods.
-	* PAGES :  the files simulates each page in the website, here the elements are declared and used to perform actions.
- 	* TEST:  test cases are created here, assertions are used to validate the actions were performed correclty
-- Reporter: here the reports with the status of the test cases executed are saved in html format (open it using any browser)
+	* PAGES :  the files simulate each page in the website, here the elements are declared and used to perform actions.
+ 	* TEST:  test cases are created here, assertions are used to validate the actions were performed correctly.
+- Reporter: here the reports with the status of the test cases executed are saved in html format (open it using any browser).
 
 
 
@@ -87,7 +87,7 @@ Copy & paste the following code into the terminal
 	```
 	npm run testlogin2browsersheadlessmode
 	```
-- Full regression (all the thest cases in this solution):
+- Full regression (all the test cases in this solution):
 	```
 	npm run fullregression
 	```
