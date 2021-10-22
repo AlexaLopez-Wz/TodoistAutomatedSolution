@@ -31,6 +31,10 @@ Programing language:
 	
 ### Installation
 - Clone the repository : https://github.com/Alexahls/TodoistAutomatedSolution
+- Go to project folder using this command:
+	```
+	cd TodoistAutomatedSolution
+	```
 - Install TestCafe using the terminal
 	 ```
 	npm install testcafe
