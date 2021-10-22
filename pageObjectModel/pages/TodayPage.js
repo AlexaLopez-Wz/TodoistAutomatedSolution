@@ -1,5 +1,5 @@
-import { Selector ,t} from "testcafe";
-var casual = require('casual');
+import { Selector} from "testcafe";
+
 
 class todayPage{
     constructor(){

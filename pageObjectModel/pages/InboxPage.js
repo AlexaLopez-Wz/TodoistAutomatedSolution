@@ -19,45 +19,49 @@ class  inboxPage{
         this.taskInPage = Selector(".task_content")
         this.taskItemsDiv = Selector(".task_list_item").child("div")
         this.taskOptions = Selector(".task_list_item__actions task_list_item__actions--active")
-        this.moreButton = Selector(".task_list_item").child("div")
+        this.moreButton = Selector(".more_actions_button")
         this.deleteTaskOption = Selector(".icon_menu_item__content").withText('Delete task')
-        this.taskdueDate = Selector(".date")
+        this.taskdueDate = Selector(".due_date_controls")
 
         //Delete modal elements
         this.confirmDeleteButton = Selector("button").withText("Delete")
     }
     
-    async createNewTask(taskName,taskDescription,dueDdate){
+    async createNewTask(taskNumber,dueDdate){
+        for(var i=0;i<=taskNumber-1;i++){
+            if(i<1){
+                await t.click(this.createNewTaskButton)
+            }
+            this.addInfoToNewTask(dueDdate)
+        }
+    }
+
+    async addInfoToNewTask(dueDdate){
+        var taskName = casual.title
+        var taskDescription= casual.description
         await t
-        .click(this.createNewTaskButton)
         .typeText(this.taskNameInput, taskName, { paste: true })
         .typeText(this.taskDescriptionInput,taskDescription)
         .click(this.dueTimeSelector)
         .typeText(this.dueTimeInput,dueDdate)
         .pressKey('enter')
-        .click(this.addTaskButton)       
+        .click(this.addTaskButton)   
+        this.validateTaskWasCreatedWithCorrectInfo(taskName,dueDdate)
     }
 
-    async createSeveralDynamicTasks(taskNumber){
-        for(var i=0;i<=taskNumber-1;i++){
-            if(i<1){
-                await t.click(this.createNewTaskButton)
-            }
-        await t
-        .typeText(this.taskNameInput, casual.title, { paste: true })
-        .typeText(this.taskDescriptionInput,casual.description)
-        .click(this.addTaskButton)
-        }
+    async validateTaskWasCreatedWithCorrectInfo(taskName, dueDdate){
+        var taskNumber = (await this.taskInPage.count) -1
+        await t.expect(this.taskInPage.nth(taskNumber).innerText).eql(taskName)
+        await t.expect( this.taskdueDate.nth(taskNumber).innerText).eql(dueDdate)
     }
 
     async deleteAllTasks(){
         //Delete all the task using the more actions button
         var taskNumber = await this.taskInPage.count
-        this.moreButton = this.moreButton.child("div").child(".more_actions_button") 
-        for(var i=taskNumber-1;i>=0;i--)
+        for(var i=0;i<taskNumber;i++)
         {
         await t
-        .hover(this.taskItemsDiv.nth(i))
+        .hover(this.taskItemsDiv.nth(0))
         .click(this.moreButton)
         .click(this.deleteTaskOption)
         .wait(1500)

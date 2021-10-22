@@ -12,13 +12,18 @@ STANDARD_USER: {
 }
 }
 
-export const  projectInfo = {
+export const  PROJECTINFO = {
     name :["Work", "Shop list", "To do - Urgent"],
     color :["Blue", "Grape", "Red","Green"],
     view : ["List", "Board"]
 }
 
-export const taskDueDate ={
+export const TASKDUEDATE ={
     today: "Today",
     tomorrow : "Tomorrow"
+}
+
+export const TASKNUMBER ={
+    singleTask : 1,
+    tenTasks : 5
 }

@@ -1,4 +1,3 @@
-import { Selector, t } from "testcafe";
 import loginPage from '../pages/LoginPage'
 import todayPage from '../pages/TodayPage'
 import {CREDENTIALS, URLS} from '../data/Constrains'

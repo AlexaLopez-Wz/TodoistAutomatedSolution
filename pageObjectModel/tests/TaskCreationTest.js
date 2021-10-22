@@ -1,53 +1,41 @@
-import { t } from "testcafe"
-import todayPage from '../pages/TodayPage'
 import inboxPage from '../pages/InboxPage'
-import {URLS,taskDueDate} from '../data/Constrains'
+import {URLS,TASKDUEDATE,TASKNUMBER} from '../data/Constrains'
 import {STANDARD_USER} from '../data/Roles'
-import sideBarPage from "../pages/SideBarPage"
+import sideBarPage from '../pages/SideBarPage'
 
-var casual = require('casual');
 
 fixture ('Create new Task feature test')
     .page `${URLS.LOGIN_URL}`
     .beforeEach(async t => {
         //Log in before run every test in this suite
         await t.useRole(STANDARD_USER)
-        await t.expect(todayPage.todayView.visible).ok()
-        await sideBarPage.goToInboxPage()
+        await t.click(sideBarPage.inboxOption)
     })
     .afterEach(async t => {
+        await t.wait(1000)
         //Delete all the task after each test case
         await inboxPage.deleteAllTasks()
         //Wait untill the api gets the new information
-        await t.wait(1500)
+        await t.wait(1000)
     })
 
-test.only.meta('type','smoke')('As an user, I should be able create a new task using today as due date', async t => {
-    var taskName = casual.title
-    var taskDescription= casual.description
-    var date = taskDueDate.today
-    await inboxPage.createNewTask(taskName,taskDescription,date)
+test.meta('type','smoke')('As an user, I should be able create a new task using today as due date', async t => {
+    //Create one single task usign Today as due date
+    await inboxPage.createNewTask(TASKNUMBER.singleTask,TASKDUEDATE.today)
     await t.wait(1500)
-    var taskNumber = await inboxPage.taskInPage.count
-    await t.expect(inboxPage.taskInPage.nth(taskNumber-1).innerText).eql(taskName)
-    console.log(inboxPage.taskDueDate.nth(taskNumber-1).innerText)
-  //  await t.expect(inboxPage.taskDueDate.nth(taskNumber-1).value).eql("Monday")
+
 })
 
 test.meta('type','smoke')('As an user, I should be able create a new task using tomorrow as due date', async t => {
-    var taskName = casual.title
-    var taskDescription= casual.description
-    var date = taskDueDate.today
-    await inboxPage.createNewTask(taskName,taskDescription,date)
+    //Create one single task usign Tomorrow as due date
+    await inboxPage.createNewTask(TASKNUMBER.singleTask,TASKDUEDATE.tomorrow)
     await t.wait(1500)
-    var taskNumber = await inboxPage.taskInPage.count
-    await t.expect(inboxPage.taskInPage.nth(taskNumber-1).innerText).eql(taskName)
-    await t.expect(inboxPage.taskDueDate.nth(taskNumber-1).innerText).eql(date)
 })
 
 test('As an user, I should be able create 10 tasks', async t => {
-    var numberOfTaskToCreate = 10
-    await inboxPage.createSeveralDynamicTasks(numberOfTaskToCreate)
-    var taskNumber = await inboxPage.taskInPage.count
-    await t.expect(taskNumber).eql(numberOfTaskToCreate)
+    //Delete all the task before start this test
+    await inboxPage.deleteAllTasks()
+    //Create 10 tasks usign Today as due date
+    await inboxPage.createNewTask(TASKNUMBER.tenTasks,TASKDUEDATE.today)
+    await t.expect(await inboxPage.taskInPage.count).eql(TASKNUMBER.tenTasks)
 })

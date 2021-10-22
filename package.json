@@ -10,17 +10,23 @@
     "fullregression": "testcafe --reporter html:././Reporter/FullRegressionReports/file.html",
     "testlogin2browsersheadlessmode": "testcafe chrome:headless,firefox:headless ./pageObjectModel/tests/LoginTest.js --reporter html:././Reporter/file.html",
     "smoketest": "testcafe --test-meta type=smoke  --reporter html:././Reporter/SmokeReports/file.html",
-    "logintest" : "testcafe ./pageObjectModel/tests/LoginTest.js  --reporter html:././Reporter/SmokeReports/file.html",
+    "logintest": "testcafe ./pageObjectModel/tests/LoginTest.js  --reporter html:././Reporter/SmokeReports/file.html",
     "taskcreationtest": "testcafe ./pageObjectModel/tests/TaskCreationTest.js  --reporter html:././Reporter/file.html",
     "projectcreationtest": "testcafe ./pageObjectModel/tests/ProjectCreationTest.js  --reporter html:././Reporter/file.html",
-    "testing": "testcafe chrome ./pageObjectModel/tests   --reporter html:././Reporter/file.html"
+    "lint-init": "eslint --init",
+    "lint": "eslint ./pageObjectModel"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "casual": "^1.6.2",
     "dotenv": "^10.0.0",
+    "eslint-plugin-testcafe": "^0.2.1",
     "testcafe": "^1.16.1",
-    "testcafe-reporter-html": "^1.4.6"
+    "testcafe-reporter-html": "^1.4.6",
+    "tree-node-cli": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1"
   }
 }
