@@ -46,13 +46,14 @@ class  inboxPage{
         .typeText(this.dueTimeInput,dueDdate)
         .pressKey('enter')
         .click(this.addTaskButton)   
+        .wait(1500)
         this.validateTaskWasCreatedWithCorrectInfo(taskName,dueDdate)
     }
 
     async validateTaskWasCreatedWithCorrectInfo(taskName, dueDdate){
-        var taskNumber = (await this.taskInPage.count) -1
-        await t.expect(this.taskInPage.nth(taskNumber).innerText).eql(taskName)
-        await t.expect( this.taskdueDate.nth(taskNumber).innerText).eql(dueDdate)
+        var numberOfTaskInThePage = (await this.taskInPage.count) -1
+        await t.expect(this.taskInPage.nth(numberOfTaskInThePage).innerText).eql(taskName)
+        await t.expect(this.taskdueDate.nth(numberOfTaskInThePage).innerText).eql(dueDdate)
     }
 
     async deleteAllTasks(){

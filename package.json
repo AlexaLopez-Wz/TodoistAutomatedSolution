@@ -7,12 +7,12 @@
     "test": "tests"
   },
   "scripts": {
-    "fullregression": "testcafe --reporter html:././Reporter/FullRegressionReports/file.html",
+    "fullregression": "testcafe --reporter html:././Reporter/FullRegressionReports/regression.html",
     "testlogin2browsersheadlessmode": "testcafe chrome:headless,firefox:headless ./pageObjectModel/tests/LoginTest.js --reporter html:././Reporter/file.html",
-    "smoketest": "testcafe --test-meta type=smoke  --reporter html:././Reporter/SmokeReports/file.html",
-    "logintest": "testcafe ./pageObjectModel/tests/LoginTest.js  --reporter html:././Reporter/SmokeReports/file.html",
-    "taskcreationtest": "testcafe ./pageObjectModel/tests/TaskCreationTest.js  --reporter html:././Reporter/file.html",
-    "projectcreationtest": "testcafe ./pageObjectModel/tests/ProjectCreationTest.js  --reporter html:././Reporter/file.html",
+    "smoketest": "testcafe --test-meta type=smoke  --reporter html:././Reporter/SmokeReports/smoke.html",
+    "logintest": "testcafe ./pageObjectModel/tests/LoginTest.js  --reporter html:././Reporter/loginTest.html",
+    "taskcreationtest": "testcafe ./pageObjectModel/tests/TaskCreationTest.js  --reporter html:././Reporter/taskTest.html",
+    "projectcreationtest": "testcafe ./pageObjectModel/tests/ProjectCreationTest.js  --reporter html:././Reporter/projectTest.html",
     "lint-init": "eslint --init",
     "lint": "eslint ./pageObjectModel"
   },

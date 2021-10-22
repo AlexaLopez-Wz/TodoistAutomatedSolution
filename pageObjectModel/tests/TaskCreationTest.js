@@ -12,7 +12,7 @@ fixture ('Create new Task feature test')
         await t.click(sideBarPage.inboxOption)
     })
     .afterEach(async t => {
-        await t.wait(1000)
+        await t.wait(2000)
         //Delete all the task after each test case
         await inboxPage.deleteAllTasks()
         //Wait untill the api gets the new information
@@ -37,5 +37,8 @@ test('As an user, I should be able create 10 tasks', async t => {
     await inboxPage.deleteAllTasks()
     //Create 10 tasks usign Today as due date
     await inboxPage.createNewTask(TASKNUMBER.tenTasks,TASKDUEDATE.today)
+    await t.wait(1500)
     await t.expect(await inboxPage.taskInPage.count).eql(TASKNUMBER.tenTasks)
+    await t.wait(1500)
 })
+

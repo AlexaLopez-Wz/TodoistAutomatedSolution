@@ -25,5 +25,5 @@ export const TASKDUEDATE ={
 
 export const TASKNUMBER ={
     singleTask : 1,
-    tenTasks : 5
+    tenTasks : 10
 }
