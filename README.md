@@ -27,6 +27,7 @@ Programing language:
 ### Prerequisites
 - [x] An IDE installed  (Recommended: Visual studio code) 
 - [x] NPM installed
+- [x] Chrome and FireFox browsers installed 
 	
 ### Installation
 - Clone the repository : https://github.com/Alexahls/TodoistAutomatedSolution
