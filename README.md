@@ -23,10 +23,22 @@
 	
 	
 - Install in the project terminal:
-	- [ ] TestCafe : `npm install testcafe`
-	- [ ] Reporter: `npm install testcafe-reporter-html`
-	- [ ] Casual: `npm install casual`
-	- [ ] ESLint : `npm install eslint`
+	- TestCafe : 
+		 ```
+		 npm install testcafe
+		 ```
+	- Reporter : 
+		```
+		npm install testcafe-reporter-html
+		```
+	- Casual : 
+	 	```
+		npm install casual
+		```
+	- ESLint : 
+	 	```
+		npm install eslint
+		```
 
 
 - Solution Structure:
@@ -63,13 +75,34 @@
 
 
 ## Execute scripts by copy & paste the following code into the terminal:
-- Login in two browsers headless:`npm run testlogin2browsersheadlessmode`
-- Full regression (all the thest cases in this solution):`npm run fullregression`
-- Validate the code using eslint: `npm run lint`
-- Run login test cases: `npm run logintest`
-- Run task creation test cases: `npm run taskcreationtest`
-- Run project creation test cases: `npm run projectcreationtest`
-- Smoke test: `npm run smoketest`
+- Login in two browsers headless:
+	```
+	npm run testlogin2browsersheadlessmode
+	```
+- Full regression (all the thest cases in this solution):
+	```
+	npm run fullregression
+	```
+- Validate the code using eslint: 
+	```
+	npm run lint
+	```
+- Run login test cases: 
+	```
+	npm run logintest
+	```
+- Run task creation test cases: 
+	```
+	npm run taskcreationtest
+	```
+- Run project creation test cases: 
+	```
+	npm run projectcreationtest
+	```
+- Smoke test: 
+	```
+	npm run smoketest
+	```
 
 
         
