@@ -14,7 +14,10 @@
     "taskcreationtest": "testcafe ./pageObjectModel/tests/TaskCreationTest.js  --reporter html:././Reporter/taskTest.html",
     "projectcreationtest": "testcafe ./pageObjectModel/tests/ProjectCreationTest.js  --reporter html:././Reporter/projectTest.html",
     "lint-init": "eslint --init",
-    "lint": "eslint ./pageObjectModel"
+    "lint": "eslint ./pageObjectModel",
+    "fullregression-headlessmode": "testcafe chrome:headless",
+    "smoketest-headlessmode": "testcafe chrome:headless --test-meta type=smoke"
+    
   },
   "author": "",
   "license": "ISC",
