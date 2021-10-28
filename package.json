@@ -16,7 +16,7 @@
     "lint-init": "eslint --init",
     "lint": "eslint ./pageObjectModel",
     "fullregression-headlessmode": "testcafe chrome:headless -r xunit:res.xml",
-    "smoketest-headlessmode": "testcafe chrome --test-meta type=smoke -r xunit:res.xml"
+    "smoketest-headlessmode": "testcafe chrome:headless --test-meta type=smoke -r xunit:res.xml"
     
   },
   "author": "",
