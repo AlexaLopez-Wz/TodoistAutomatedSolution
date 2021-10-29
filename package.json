@@ -15,7 +15,7 @@
     "projectcreationtest": "testcafe ./pageObjectModel/tests/ProjectCreationTest.js  --reporter html:././Reporter/projectTest.html",
     "lint-init": "eslint --init",
     "lint": "eslint ./pageObjectModel",
-    "fullregression-headlessmode": "testcafe chrome:headless -r xunit:fullregression.xml",
+    "fullregression-headlessmode": "testcafe chrome -r xunit:fullregression.xml",
     "smoketest-headlessmode": "testcafe chrome:headless --test-meta type=smoke -r xunit:smoke.xml"
     
   },
