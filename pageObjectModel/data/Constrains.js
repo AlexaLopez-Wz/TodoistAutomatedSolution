@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const URLS = {
-    LOGIN_URL:`https://todoist.com/Users/showLogin`
+    LOGIN_URL:`https://todoist.com/Users/showLogin/`
 }
 
 export const CREDENTIALS = { 
